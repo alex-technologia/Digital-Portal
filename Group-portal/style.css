@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: white;
 }
 
 body {
@@ -20,10 +21,11 @@ body {
 
 /* Logo Text */
 .logo a {
-  color: #ffffff;
+  color: #080808;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
+  background-color: #596978;
 }
 
 /* Navigation Links List */
@@ -35,7 +37,7 @@ body {
 
 /* Individual Links style */
 .nav-links a {
-  color: #ffffff;
+  color: #080707;
   text-decoration: none; /* Removes underline */
   font-size: 16px;
   padding: 8px 12px;
@@ -50,22 +52,54 @@ body {
   color: #1abc9c; /* Highlight accent color */
 }
 
-.main-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+.diff-content {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 
 .portal-button {
 display: flex;
-justify-content: center;
-align-items: flex-end;
 border: white;
-width: 50%;
-background-color:#1abc9c;
+  /* Layout and Sizing */
+  display: inline-block;        /* Allows padding and width/height while staying inline */
+  padding: 12px 24px;     
+  gap: 12px;     /* Vertical and horizontal spacing inside the button */
+  
+  /* Typography */
+  color: #ffffff;              /* Text color */
+  text-decoration: none;       /* Removes the default link underline */
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  
+  /* Aesthetics */
+  background-color: #007bff;   /* Primary button color */
+  border: none;                /* Removes default border */
+  border-radius: 4px;          /* Slightly rounded corners */
+  cursor: pointer;             /* Shows the hand cursor on hover */
+  
+  /* Smooth interaction effect */
+  transition: background-color 0.2s ease; 
+}
+
+/* Hover & Active States */
+.portal-button:hover {
+  background-color: #0056b3;   /* Darker shade when hovering */
+}
+
+.portal-button:active {
+  background-color: #004085;   /* Even darker shade when clicked */
 }
 
 .footer {
@@ -75,4 +109,8 @@ background-color:#1abc9c;
   align-content: end; 
 }
 
-
+.title {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
