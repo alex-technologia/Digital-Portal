@@ -34,36 +34,70 @@
                 <thead> 
                     <tr> 
                         <th>Title</th>
-                        <th>pages</th>
+                        <th>Topic</th>
                         <th>Website</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Alex</td>
-                            <td><a href="#">Operating Systems</a></td>
-                            <td><a href="#">website</a></td>   
+                            <td>Operating Systems</td>
+                            <td><a href="index.html">visit website</a></td>   
                         </tr>
                         <tr>
-                            <td>Aiman</td>
-                            <td><a href="#">Aiman Website</a></td>
-                            <td><a href="#">website</a></td>
+                                        <td>Aiman</td>
+                                        <td>Aiman Website</td>
+                                        <td><a href="Aiman/index.html">visit website</a></td>
                         </tr>
                         <tr>
                             <td>Ibrahim</td>
-                            <td><a href="#">Ibrahim Website</a></td>
-                            <td><a href="#">website</a></td>
+                            <td>Ibrahim Website</td>
+                            <td><a href="Ibrahim/index.html">visit website</a></td>
                         </tr>
                         <tr>
                             <td>Harith</td>
-                            <td><a href="#">Harith Website</a></td>
-                            <td><a href="#">website</a></td>
+                            <td>Harith Website</td>
+                            <td><a href="Harith/index.html">visit website</a></td>
                         </tr>
 
                     </tbody>
                 </thead>
             </table>
             </div>
+         <section class="community-section">
+
+            <h2>Share Your Thoughts</h2>
+
+            <p>
+                Pick an operating system from the dropdown menu and share your thoughts, questions, or experiences with the community. Your input is valuable and can help others learn and grow in their understanding of operating systems.
+            </p>
+
+            <form>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="topic">Operating Systems:</label>
+
+        <select id="topic" name="topic">
+            <option value="android">Android</option>
+            <option value="IOS">IOS</option>
+            <option value="macos">MacOS</option>
+            <option value="linux">Linux</option>
+            <option value="windows">Windows</option>
+        </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+
+        </section>
             </main>
             <footer class="site-footer">© 2026 Operating Systems (262FC261VW)</footer>
             </body>

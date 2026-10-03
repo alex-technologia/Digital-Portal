@@ -355,6 +355,85 @@ section p {
     margin-bottom: 16px;
 }
 
+.community-section {
+    width: min(760px, 90%);
+    margin: 0 auto 48px;
+    padding: 32px;
+    background-color: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+}
+
+.community-section h2 {
+    margin-bottom: 8px;
+}
+
+.community-section form {
+    display: grid;
+    gap: 10px;
+}
+
+.community-section label {
+    color: #e0e0e0;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.community-section input:not([type="submit"]),
+.community-section select,
+.community-section textarea {
+    width: 100%;
+    padding: 11px 12px;
+    color: #e0e0e0;
+    background-color: #0d0d0d;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.community-section textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.community-section input:focus,
+.community-section select:focus,
+.community-section textarea:focus {
+    outline: 2px solid #4AF626;
+    outline-offset: 2px;
+    border-color: #4AF626;
+}
+
+.community-section input[type="submit"] {
+    justify-self: start;
+    margin-top: 12px;
+    padding: 11px 24px;
+    color: #0d0d0d;
+    background-color: #4AF626;
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.community-section input[type="submit"]:hover {
+    background-color: #7cfc00;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+    .community-section {
+        width: 90%;
+        padding: 22px 18px;
+    }
+
+    .community-section input[type="submit"] {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
