@@ -1,116 +1,152 @@
-/* Reset default margins and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: white;
 }
 
 body {
   font-family: Arial, sans-serif;
+  color: #f4f5f5;
+  min-height: 100vh;
 }
 
-/* Navbar Container styling */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Pushes logo to left, links to right */
-  align-items: center; /* Vertically centers the content */
-  background-color: #2c3e50; /* Dark gray/blue background */
-  padding: 15px 30px;
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
-/* Logo Text */
-.logo a {
-  color: #080808;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #596978;
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Navigation Links List */
-.nav-links {
-  list-style-type: none; /* Removes bullet points */
-  display: flex; /* Lines up list items horizontally */
-  gap: 20px; /* Space between links */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 10, 20, 0.72);
 }
 
-/* Individual Links style */
-.nav-links a {
-  color: #080707;
-  text-decoration: none; /* Removes underline */
-  font-size: 16px;
-  padding: 8px 12px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
-}
-
-/* Hover and Active states */
-.nav-links a:hover, 
-.nav-links a.active {
-  background-color: #34495e; /* Lighter shade on hover */
-  color: #1abc9c; /* Highlight accent color */
-}
 
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
-.diff-content {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-
-.portal-button {
-display: flex;
-border: white;
-  /* Layout and Sizing */
-  display: inline-block;        /* Allows padding and width/height while staying inline */
-  padding: 12px 24px;     
-  gap: 12px;     /* Vertical and horizontal spacing inside the button */
-  
-  /* Typography */
-  color: #ffffff;              /* Text color */
-  text-decoration: none;       /* Removes the default link underline */
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  
-  /* Aesthetics */
-  background-color: #007bff;   /* Primary button color */
-  border: none;                /* Removes default border */
-  border-radius: 4px;          /* Slightly rounded corners */
-  cursor: pointer;             /* Shows the hand cursor on hover */
-  
-  /* Smooth interaction effect */
-  transition: background-color 0.2s ease; 
-}
-
-/* Hover & Active States */
-.portal-button:hover {
-  background-color: #0056b3;   /* Darker shade when hovering */
-}
-
-.portal-button:active {
-  background-color: #004085;   /* Even darker shade when clicked */
-}
-
-.footer {
-  display: grid;
-  min-height: 100dvh;
-  /* Aligns grid items to the vertical end (bottom) */
-  align-content: end; 
+  padding: 60px 24px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .title {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.title h2 {
+  font-size: 1.2rem;
+  color: #b9cce8;
+  font-weight: 400;
+}
+
+.list {
+  background: rgba(18, 31, 48, 0.7);
+  border: 1px solid rgba(143, 167, 210, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+  padding: 28px 36px;
+  margin-bottom: 36px;
+}
+
+.list ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.list li {
+  font-size: 1.02rem;
+  color: #edf5ff;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.diff-content {
+  width: min(780px, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portal-button {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.button {
+  background: black;
+  border: 1px solid rgba(159, 197, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 18px 30px rgba(11, 59, 120, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 35px rgba(11, 59, 120, 0.42);
+  border-color: rgba(156, 216, 255, 0.7);
+}
+
+.button a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  padding: 22px 18px;
+}
+
+.portal-footer {
+  text-align: center;
+  color: #d9e8ff;
+  padding: 18px 20px 28px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .portal-button {
+    grid-template-columns: 1fr;
+  }
+
+  .list {
+    padding: 20px 18px;
+  }
 }
