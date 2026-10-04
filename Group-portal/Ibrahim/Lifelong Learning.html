@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Workplace | Jhimd</title>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn | Jhimd</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --muted: #dfe9ff;
+            --blue: #0952f0;
+            --blue-soft: #00b7ff;
+            --card: rgba(255, 255, 255, 0.08);
+            --border: rgba(9, 138, 243, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("1.jpg") center/cover no-repeat fixed;
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+            padding: 18px 40px;
+            background: rgba(4, 37, 180, 0.192);
+            backdrop-filter: blur(4px);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .navlogo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .logotext {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .brand-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-item {
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            background: rgb(4, 175, 243);
+        }
+        .learning-banner {
+    background-color: #086ff5;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.learning-banner h2 {
+    color: #fff8f8;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.learning-banner p {
+    color: #feffff;
+    font-size: 19px;
+}
+
+        .career-banner {
+            text-align: center;
+            padding: 30px 10px;
+            background: rgba(9, 82, 240, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .career-banner h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 12px;
+        }
+
+        .career-banner p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+.content-section {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.content-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.learning-highlight {
+    background-color: #000000;
+    color: white;
+    padding: 60px 20px;
+}
+
+.learning-highlight h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.learning-highlight p {
+    max-width: 850px;
+    margin-bottom: 15px;
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.skill-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #dbeafe;
+    color: #1d4ed8;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+
+
+.development-list {
+    padding-left: 30px;
+    margin-top: 25px;
+}
+
+.development-list li {
+    margin-bottom: 15px;
+}
+
+
+
+.learning-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 25px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    background-color: white;
+
+    border-left: 5px solid #2563eb;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-number {
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #172554;
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+.timeline-item h3 {
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+
+
+
+.resources-section {
+    background-color: #f8fafc;
+    padding: 70px 20px;
+}
+
+.resources-section > .container > h2 {
+    color: #172554;
+    margin-bottom: 15px;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.resource-card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resource-number {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.resource-card h3 {
+    color: #172554;
+
+    font-size: 24px;
+
+    margin: 12px 0 25px;
+}
+
+.resource-card h4 {
+    color: #1d4ed8;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+.resource-card p {
+    color: #334155;
+
+    line-height: 1.8;
+}
+
+.reflection-box {
+    background-color: #eff6ff;
+
+    padding: 40px;
+
+    border-left: 6px solid #2563eb;
+
+    border-radius: 10px;
+}
+
+.reflection-box h2 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.reflection-box p {
+    margin-bottom: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="navlogo">
+                <span class="logotext">Jhimd</span>
+                <span class="brand-subtitle">AI Workplace</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="learn.html" class="nav-link">Learn</a></li>
+                <li class="nav-item"><a href="Action.html" class="nav-link">Action</a></li>
+                <li class="nav-item"><a href="Lifelong Learning.html" class="nav-link">Lifelong Learning</a></li>
+                <li class="nav-item"><a href="Careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="Community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</html>
+
+</html>
+
+
+        <section class="learning-banner">
+
+            <div class="container">
+
+                <h2>Lifelong Learning</h2>
+
+                <p>
+                    Continue learning, develop new skills and
+                    prepare for the future digital workplace.
+                </p>
+
+            </div>
+
+        </section>
+
+    
+
+        <section class="learning-highlight">
+
+            <div class="container">
+
+                <h2>Why AI Matters?</h2>
+
+                <p>
+                    Artificial Intelligence is relevant to the
+                    modern digital workplace because organisations
+                    can use digital technologies to support
+                    different activities and processes.
+                </p>
+
+                <p>
+                    Learning about AI can help me understand
+                    emerging technologies and identify areas where
+                    I can continue developing my digital skills.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="container content-section">
+
+            <h2>New Knowledge and Skills</h2>
+
+            <p>
+                During this project, I developed knowledge and
+                skills in several areas.
+            </p>
+
+
+            <div class="skills-grid">
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        AI
+                    </div>
+
+                    <h3>AI Knowledge</h3>
+
+                    <p>
+                        Improved my understanding of AI concepts,
+                        applications and workplace uses.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        HTML
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        Developed webpages using HTML5 and learned
+                        how to organise website content.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        CSS
+                    </div>
+
+                    <h3>Web Design</h3>
+
+                    <p>
+                        Learned how CSS can be used to create
+                        consistent layouts, colours and designs.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        R
+                    </div>
+
+                    <h3>Research Skills</h3>
+
+                    <p>
+                        Practised finding, comparing and organising
+                        information about AI.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        C
+                    </div>
+
+                    <h3>Critical Thinking</h3>
+
+                    <p>
+                        Considered both the benefits and challenges
+                        of using AI.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        D
+                    </div>
+
+                    <h3>Digital Literacy</h3>
+
+                    <p>
+                        Improved my understanding of digital
+                        workplace technologies.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <section class="container content-section">
+
+            <h2>Areas for Future Development</h2>
+
+            <p>
+                There are several areas that I would like to
+                develop further as I continue learning about AI.
+            </p>
+
+
+            <ul class="development-list">
+
+                <li>
+                    Learn programming fundamentals.
+                </li>
+
+                <li>
+                    Improve Python programming skills.
+                </li>
+
+                <li>
+                    Learn more about data analysis.
+                </li>
+
+                <li>
+                    Study machine learning concepts.
+                </li>
+
+                <li>
+                    Understand AI ethics and responsible AI.
+                </li>
+
+                <li>
+                    Explore professional AI certifications.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <section class="container content-section">
+
+            <h2>My Future Learning Plan</h2>
+
+            <p>
+                My learning plan is to gradually develop my
+                technical knowledge and apply it to future
+                academic and workplace opportunities.
+            </p>
+
+
+            <div class="learning-timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>AI Fundamentals</h3>
+
+                        <p>
+                            Build a stronger understanding of
+                            Artificial Intelligence concepts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>Programming</h3>
+
+                        <p>
+                            Develop programming knowledge,
+                            particularly in Python.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>Data Analysis</h3>
+
+                        <p>
+                            Learn how data can be collected,
+                            analysed and interpreted.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>Machine Learning</h3>
+
+                        <p>
+                            Develop a deeper understanding of
+                            machine learning methods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>Professional Development</h3>
+
+                        <p>
+                            Explore recognised training and
+                            professional certifications.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        
+
+    </main>
+
+
+</body>
+
+</html>
+

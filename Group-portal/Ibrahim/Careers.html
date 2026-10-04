@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Workplace | Jhimd</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --muted: #dfe9ff;
+            --blue: #0952f0;
+            --blue-soft: #00b7ff;
+            --card: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("1.jpg") center/cover no-repeat fixed;
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+            padding: 18px 40px;
+            background: rgba(4, 37, 180, 0.192);
+            backdrop-filter: blur(4px);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .navlogo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .logotext {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .brand-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-item {
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .career-banner {
+            text-align: center;
+            padding: 30px 10px;
+            background: rgba(9, 82, 240, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .career-banner h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 12px;
+        }
+
+        .career-banner p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 50px 20px 20px;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            margin-bottom: 14px;
+        }
+
+        .content-section p {
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto 16px;
+        }
+
+        .career-section {
+            padding: 30px 20px;
+        }
+
+        .career-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(2, 105, 201, 0.747);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            padding: 30px;
+        }
+
+        .career-number {
+            color: var(--blue-soft);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .career-card h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .career-card p,
+        .career-card li {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .career-card h3 {
+            color: var(--white);
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .career-card ul {
+            padding-left: 22px;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 10px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .skill-list li {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+        .certification-section {
+            padding: 70px 20px;
+            background: rgba(35, 82, 200, 0.25);
+        }
+
+        .certification-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .certification-section > .container > p {
+            color: var(--muted);
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 35px;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .certification-card {
+            background: rgb(6, 68, 238);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .certification-number {
+            color: var(--blue-soft);
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.12em;
+        }
+
+        .certification-card h3 {
+            color: var(--white);
+            margin-bottom: 14px;
+            font-size: 1.3rem;
+        }
+
+        .certification-card p,
+        .certification-card li {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .certification-card h4 {
+            color: var(--white);
+            margin: 18px 0 10px;
+        }
+
+        .certification-card ul {
+            padding-left: 18px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: var(--blue);
+            color: var(--white);
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #0d63ff;
+        }
+
+        .career-path-section {
+            padding: 70px 20px;
+        }
+
+        .career-path-section h2 {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .career-path-section p {
+            text-align: center;
+            color: var(--muted);
+            max-width: 800px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+        }
+
+        .career-path {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .path-item {
+            background: rgb(2, 38, 155);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 25px 18px;
+            text-align: center;
+        }
+
+        .path-item span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .path-item h3 {
+            color: var(--black);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .path-item p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .career-form-section {
+            padding: 70px 20px;
+            background: none;
+        }
+
+        .career-form {
+            max-width: 750px;
+            margin: 0 auto;
+            background: rgba(0, 104, 240, 0.808);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .career-form h2 {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .career-form p {
+            color: var(--muted);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .career-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .career-form label {
+            font-weight: 700;
+            color: var(--black);
+            margin-top: 8px;
+        }
+
+        .career-form,
+.career-form h2,
+.career-form p,
+.career-form label,
+.form-label,
+.radio-group label,
+.career-form input,
+.career-form select,
+.career-form textarea {
+    color: #000000;
+}
+
+.career-form input,
+.career-form select,
+.career-form textarea {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+        .career-form input,
+        .career-form select,
+        .career-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgb(234, 245, 245);
+            color: var(--black);
+            font-size: 1rem;
+        }
+
+        .career-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .career-form input::placeholder,
+        .career-form textarea::placeholder {
+            color: rgb(0, 0, 0);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .radio-group label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-btn {
+            margin-top: 18px;
+            border: none;
+            cursor: pointer;
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .certification-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .career-path {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skill-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .certification-grid,
+            .career-path,
+            .skill-list {
+                grid-template-columns: 1fr;
+            }
+
+            .career-form {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="navlogo">
+                <span class="logotext">Jhimd</span>
+                <span class="brand-subtitle">AI Workplace</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="learn.html" class="nav-link">Learn</a></li>
+                <li class="nav-item"><a href="Action.html" class="nav-link">Action</a></li>
+                <li class="nav-item"><a href="Lifelong Learning.html" class="nav-link">Lifelong Learning</a></li>
+                <li class="nav-item"><a href="Careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="Community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="career-banner">
+        <div class="container">
+            <h2>Careers & Professional Certifications</h2>
+            <p>
+                Explore career opportunities and professional learning pathways related to artificial intelligence.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>AI Career Opportunities</h2>
+            <p>
+                Artificial intelligence is connected to many areas of information technology.
+                Professionals can work in areas such as software development, machine learning,
+                data analysis and AI solution development.
+            </p>
+            <p>
+                The following careers are examples of IT roles that can involve artificial intelligence
+                and machine learning.
+            </p>
+        </div>
+    </section>
+
+    <section class="career-section">
+        <div class="container">
+            <div class="career-card">
+                <div class="career-number">CAREER 01</div>
+                <h2>AI Engineer</h2>
+                <p>
+                    An AI Engineer develops and implements artificial intelligence solutions that can
+                    be integrated into applications and business systems.
+                </p>
+
+                <h3>Typical Responsibilities</h3>
+                <ul>
+                    <li>Develop AI-powered applications.</li>
+                    <li>Implement machine learning and AI models.</li>
+                    <li>Work with natural language processing.</li>
+                    <li>Develop computer vision solutions.</li>
+                    <li>Integrate AI services into applications.</li>
+                    <li>Work with developers, data scientists and business teams.</li>
+                </ul>
+
+                <h3>Useful Skills</h3>
+                <ul class="skill-list">
+                    <li>Python programming</li>
+                    <li>Machine learning</li>
+                    <li>Cloud computing</li>
+                    <li>Data processing</li>
+                    <li>Problem solving</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-section">
+        <div class="container">
+            <div class="career-card">
+                <div class="career-number">CAREER 02</div>
+                <h2>Machine Learning Engineer</h2>
+                <p>
+                    A Machine Learning Engineer works with machine learning models and systems.
+                    The role can involve preparing data, developing models, deploying solutions and
+                    monitoring machine learning systems.
+                </p>
+
+                <h3>Typical Responsibilities</h3>
+                <ul>
+                    <li>Prepare and transform data for machine learning.</li>
+                    <li>Develop and train machine learning models.</li>
+                    <li>Evaluate model performance.</li>
+                    <li>Deploy machine learning solutions.</li>
+                    <li>Monitor and maintain machine learning systems.</li>
+                    <li>Improve machine learning workflows.</li>
+                </ul>
+
+                <h3>Useful Skills</h3>
+                <ul class="skill-list">
+                    <li>Python programming</li>
+                    <li>Statistics</li>
+                    <li>Machine learning</li>
+                    <li>Data engineering</li>
+                    <li>Cloud platforms</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-section">
+        <div class="container">
+            <div class="career-card">
+                <div class="career-number">CAREER 03</div>
+                <h2>Data Scientist</h2>
+                <p>
+                    A Data Scientist uses data, statistics and computational techniques to identify
+                    patterns and produce useful insights. Machine learning can be used as part of the
+                    data science process.
+                </p>
+
+                <h3>Typical Responsibilities</h3>
+                <ul>
+                    <li>Collect and prepare datasets.</li>
+                    <li>Analyse large amounts of data.</li>
+                    <li>Identify patterns and trends.</li>
+                    <li>Develop statistical and machine learning models.</li>
+                    <li>Communicate findings using reports and visualisations.</li>
+                    <li>Support data-driven decision making.</li>
+                </ul>
+
+                <h3>Useful Skills</h3>
+                <ul class="skill-list">
+                    <li>Statistics</li>
+                    <li>Python</li>
+                    <li>Data analysis</li>
+                    <li>Data visualisation</li>
+                    <li>Machine learning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="certification-section">
+        <div class="container">
+            <h2>Professional Certifications & Training</h2>
+            <p>
+                Professional certifications and structured training can provide recognised learning
+                pathways for students and professionals who want to develop AI-related skills.
+            </p>
+
+            <div class="certification-grid">
+                <article class="certification-card">
+                    <div class="certification-number">01</div>
+                    <h3>Microsoft Certified: Azure AI Apps and Agents Developer Associate</h3>
+                    <p>
+                        This Microsoft certification focuses on designing, developing and deploying AI
+                        solutions using Azure and Microsoft Foundry.
+                    </p>
+                    <h4>Skills Developed</h4>
+                    <ul>
+                        <li>Generative AI</li>
+                        <li>AI applications</li>
+                        <li>AI agents</li>
+                        <li>Computer vision</li>
+                        <li>Text analysis</li>
+                    </ul>
+                    <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate" target="_blank" class="button">
+                        View Certification
+                    </a>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-number">02</div>
+                    <h3>AWS Certified Machine Learning Engineer – Associate</h3>
+                    <p>
+                        This AWS certification focuses on implementing, deploying, maintaining and
+                        operationalising machine learning solutions using AWS.
+                    </p>
+                    <h4>Skills Developed</h4>
+                    <ul>
+                        <li>Machine learning</li>
+                        <li>Data preparation</li>
+                        <li>Model development</li>
+                        <li>Model deployment</li>
+                        <li>ML monitoring and security</li>
+                    </ul>
+                    <a href="https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/" target="_blank" class="button">
+                        View Certification
+                    </a>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-number">03</div>
+                    <h3>Microsoft Azure AI Fundamentals</h3>
+                    <p>
+                        Azure AI Fundamentals provides a foundation for understanding AI concepts and AI
+                        solutions on Microsoft Azure.
+                    </p>
+                    <h4>Useful For</h4>
+                    <ul>
+                        <li>Students beginning their AI journey</li>
+                        <li>Understanding AI concepts</li>
+                        <li>Learning Azure AI services</li>
+                        <li>Building foundational technical knowledge</li>
+                    </ul>
+                    <a href="https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/" target="_blank" class="button">
+                        View Certification
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-path-section">
+        <div class="container">
+            <h2>My Suggested AI Career Learning Path</h2>
+            <p>
+                A student can gradually develop AI-related skills by starting with fundamental
+                knowledge and progressing towards programming, data and professional certification.
+            </p>
+
+            <div class="career-path">
+                <div class="path-item">
+                    <span>1</span>
+                    <h3>AI Fundamentals</h3>
+                    <p>Learn basic artificial intelligence and machine learning concepts.</p>
+                </div>
+
+                <div class="path-item">
+                    <span>2</span>
+                    <h3>Programming</h3>
+                    <p>Develop programming skills, particularly Python and problem solving.</p>
+                </div>
+
+                <div class="path-item">
+                    <span>3</span>
+                    <h3>Data Skills</h3>
+                    <p>Learn data analysis, statistics and data visualisation.</p>
+                </div>
+
+                <div class="path-item">
+                    <span>4</span>
+                    <h3>AI Projects</h3>
+                    <p>Build small projects to practise AI, data and programming skills.</p>
+                </div>
+
+                <div class="path-item">
+                    <span>5</span>
+                    <h3>Certification</h3>
+                    <p>Work towards a recognised certification that matches your career interests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-form-section">
+        <div class="container">
+            <div class="career-form">
+                <h2>Explore Your AI Career</h2>
+                <p>
+                    Complete this form to identify an AI career area that interests you.
+                    This form is for demonstration purposes and does not submit information to a server.
+                </p>
+
+                <form onsubmit="event.preventDefault()">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" />
+
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" />
+
+                    <label for="career">Career of Interest:</label>
+                    <select id="career" name="career">
+                        <option value="">Select a career</option>
+                        <option value="ai-engineer">AI Engineer</option>
+                        <option value="ml-engineer">Machine Learning Engineer</option>
+                        <option value="data-scientist">Data Scientist</option>
+                    </select>
+
+                    <div class="form-label">Which skill would you most like to develop?</div>
+                    <div class="radio-group">
+                        <label><input type="radio" name="skill" value="programming" /> Programming</label>
+                        <label><input type="radio" name="skill" value="data" /> Data Analysis</label>
+                        <label><input type="radio" name="skill" value="machine-learning" /> Machine Learning</label>
+                    </div>
+
+                    <label for="message">Career Learning Goal:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your learning goal..."></textarea>
+
+                    <button type="submit" class="button submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

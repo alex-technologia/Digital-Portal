@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Workplace | Jhimd</title>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn | Jhimd</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --muted: #dfe9ff;
+            --blue: #0952f0;
+            --blue-soft: #00b7ff;
+            --card: rgba(255, 255, 255, 0.08);
+            --border: rgba(9, 138, 243, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("1.jpg") center/cover no-repeat fixed;
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+            padding: 18px 40px;
+            background: rgba(4, 37, 180, 0.192);
+            backdrop-filter: blur(4px);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .navlogo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .logotext {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .brand-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-item {
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            background: rgb(4, 175, 243);
+        }
+
+       
+.action-banner {
+    background-color: #086ff5;
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.action-banner h2 {
+    color: #ffffff;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.action-banner p {
+    color: #feffff;
+    font-size: 19px;
+}
+
+
+
+
+.action-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+.action-image img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    box-shadow:  0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.action-content {
+    padding: 20px;
+}
+
+.action-content h2 {
+    color: #5179fd;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.action-content h3 {
+    color: #f5f7fc;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+.area-number {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.action-content ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.action-content li {
+    margin-bottom: 8px;
+}
+
+
+.example-box {
+    background-color: #277ff1;
+    border-left: 5px solid #2563eb;
+
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.example-box strong {
+    color: #172554;
+}
+
+
+.action-message {
+    text-align: center;
+    background-color: #172554;
+    color: white;
+
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.action-message h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.action-message p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+
+@media (max-width: 800px) {
+
+    .action-area {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .action-area.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .action-banner h2 {
+        font-size: 35px;
+    }
+
+    .action-content h2 {
+        font-size: 28px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="navlogo">
+                <span class="logotext">Jhimd</span>
+                <span class="brand-subtitle">AI Workplace</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="learn.html" class="nav-link">Learn</a></li>
+                <li class="nav-item"><a href="Action.html" class="nav-link">Action</a></li>
+                <li class="nav-item"><a href="Lifelong Learning.html" class="nav-link">Lifelong Learning</a></li>
+                <li class="nav-item"><a href="Careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="Community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</html>
+
+</html>
+<main>
+
+
+        <section class="action-banner">
+
+            <div class="container">
+
+                <h2>AI in Action</h2>
+
+                <p>
+                    Discover how Artificial Intelligence can be
+                    applied in education, business and healthcare.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="container action-area">
+
+            <div class="action-image">
+                <img src="ai-education.jpg" alt="Artificial Intelligence used in education">
+
+            </div>
+
+
+            <div class="action-content">
+
+                <span class="area-number">01</span>
+
+                <h2>AI in Education</h2>
+
+                <p>
+                    AI can support education by providing
+                    personalised learning experiences, assisting
+                    educators and helping students access
+                    information.
+                </p>
+
+
+                <h3>Examples</h3>
+
+                <ul>
+
+                    <li>
+                        Personalised learning activities
+                    </li>
+
+                    <li>
+                        AI-powered learning assistants
+                    </li>
+
+                    <li>
+                        Automated feedback
+                    </li>
+
+                    <li>
+                        Educational chatbots
+                    </li>
+
+                </ul>
+
+
+                <div class="example-box">
+
+                    <strong>Example:</strong>
+
+                    <p>
+                        An educational platform can use AI to
+                        analyse a student's learning activities
+                        and provide suitable practice materials.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="container action-area reverse">
+
+            <div class="action-image">
+
+                <img src="ai-business.jpg" alt="Artificial Intelligence used in business">
+
+            </div>
+
+
+            <div class="action-content">
+
+                <span class="area-number">02</span>
+
+                <h2>AI in Business</h2>
+
+                <p>
+                    Businesses can use AI to support customer
+                    service, analyse information, automate
+                    selected processes and assist employees.
+                </p>
+
+
+                <h3>Examples</h3>
+
+                <ul>
+
+                    <li>
+                        Customer service chatbots
+                    </li>
+
+                    <li>
+                        Business data analysis
+                    </li>
+
+                    <li>
+                        Automated document processing
+                    </li>
+
+                    <li>
+                        Marketing analysis
+                    </li>
+
+                </ul>
+
+
+                <div class="example-box">
+
+                    <strong>Example:</strong>
+
+                    <p>
+                        A company may use an AI chatbot to answer
+                        frequently asked customer questions and
+                        direct customers to appropriate information.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="container action-area">
+
+            <div class="action-image">
+
+                <img src="ai-healthcare.jpg" alt="Artificial Intelligence used in healthcare">
+
+            </div>
+
+
+            <div class="action-content">
+
+                <span class="area-number">03</span>
+
+                <h2>AI in Healthcare</h2>
+
+                <p>
+                    AI can support selected healthcare activities,
+                    including analysis of medical information,
+                    images and administrative processes.
+                </p>
+
+
+                <h3>Examples</h3>
+
+                <ul>
+
+                    <li>
+                        Medical image analysis
+                    </li>
+
+                    <li>
+                        Healthcare information systems
+                    </li>
+
+                    <li>
+                        Administrative support
+                    </li>
+
+                    <li>
+                        Medical research
+                    </li>
+
+                </ul>
+
+
+                <div class="example-box">
+
+                    <strong>Example:</strong>
+
+                    <p>
+                        AI-based systems can assist healthcare
+                        professionals with analysing medical images
+                        as part of a broader clinical process.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+</body>
+
+</html>
