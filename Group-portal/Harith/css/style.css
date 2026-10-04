@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f7;
+    color: #333;
+    line-height: 1.7;
+    font-size: 17px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 18px 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 5px 0;
+    font-size: 32px;
+    color: #4ee7ef;
+}
+
+/* Navigation */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0b1f3a;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 3px 5px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 13px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #00adb5;
+    color: white;
+}
+
+/* Main container */
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 35px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3 {
+    color: #0b1f3a;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 27px;
+    border-left: 5px solid #00adb5;
+    padding-left: 12px;
+    margin-top: 35px;
+}
+
+h3 {
+    font-size: 21px;
+    margin-top: 25px;
+}
+
+/* Banner */
+
+.banner-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Links */
+
+a {
+    color: #008c95;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #0b1f3a;
+}
+
+/* Portal button */
+
+.btn-portal {
+    display: inline-block;
+    background-color: #00adb5;
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.btn-portal:hover {
+    background-color: #0b1f3a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 13px;
+    text-align: left;
+}
+
+th {
+    background-color: #0b1f3a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e8f6f7;
+}
+
+/* Forms */
+
+form {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #f7f9fc;
+    border: 1px solid #d9e0e8;
+    border-radius: 7px;
+    max-width: 700px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00adb5;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #0b1f3a;
+    color: white;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #00adb5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 4px 0;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    .container {
+        width: 94%;
+        padding: 25px;
+    }
+
+    .banner-img {
+        height: 220px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
