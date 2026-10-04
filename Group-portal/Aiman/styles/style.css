@@ -170,3 +170,11 @@ div > .button-link {
     }
 }    
 
+.community-sites {
+    a:link{
+    color: #ff007f;
+}
+a:visited{
+    color: #ff0044;
+}
+}
